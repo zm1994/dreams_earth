@@ -1,0 +1,9 @@
+<div *ngIf="user">
+    <form [formGroup]="addForm" (ngSubmit)="changePersonalData()">
+        <label>Age</label>
+        <input type="text" formControlName="age" name="age">
+        <label>Personal info</label>
+        <input type="text" formControlName="information" name="info">
+        <button>Save</button>
+    </form>
+</div>

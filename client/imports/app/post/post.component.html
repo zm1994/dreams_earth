@@ -1,0 +1,26 @@
+<div *ngIf="!user">Please login for adding post</div>
+<div *ngIf="user" class="post">
+    <form [formGroup]="addForm" (ngSubmit)="addPost()">
+        <div >
+            <label>Header</label>
+            <input class="post_input" type="text" formControlName="header"
+                   required="Please fill this field">
+        </div>
+        <div>
+            <label>Description</label>
+            <textarea class="post_input text_area" type="text" formControlName="description"
+                   required="Please fill this field"></textarea>
+        </div>
+        <div>
+            <label>City</label>
+            <input class="post_input" formControlName="city"
+                      required="Please fill this field">
+        </div>
+        <div>
+            <label>Cost</label>
+            <input class="post_input " type="number" formControlName="cost"
+                   required="Please fill this field">
+        </div>
+        <button class="submit" type="submit">Add</button>
+    </form>
+</div>

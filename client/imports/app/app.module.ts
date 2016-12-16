@@ -1,14 +1,29 @@
-import { NgModule } from "@angular/core";
-import { BrowserModule } from "@angular/platform-browser";
-import { AppComponent } from "./app.component";
-import { DemoComponent } from "./demo/demo.component";
-import { DemoDataService } from "./demo/demo-data.service";
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+import { AccountsModule } from 'angular2-meteor-accounts-ui';
+import { AppComponent } from './app.component';
+import { routes } from './app.routes';
+import { CabinetComponent } from './personal_info/personal_cabinet.component'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PostComponent } from './post/post.component'
+import {ListPostComponent} from "./post/post-list.component";
 
 @NgModule({
   // Components, Pipes, Directive
+  imports:[
+    BrowserModule,
+    RouterModule.forRoot(routes),
+    AccountsModule,
+    FormsModule,
+    ReactiveFormsModule
+  ],
   declarations: [
     AppComponent,
-    DemoComponent
+    CabinetComponent,
+    PostComponent,
+    ListPostComponent
   ],
   // Entry Components
   entryComponents: [
@@ -16,12 +31,9 @@ import { DemoDataService } from "./demo/demo-data.service";
   ],
   // Providers
   providers: [
-    DemoDataService
+
   ],
-  // Modules
-  imports: [
-    BrowserModule
-  ],
+
   // Main Component
   bootstrap: [ AppComponent ]
 })
